@@ -49,8 +49,8 @@ export default function Navbar() {
                     <Link href="https://www.tiktok.com/@periodicohoybolivia" legacyBehavior scroll={false}>
                         <a onClick={handlerClick} target="_blank"> <img src="/SocialMedia/tiktok.png" alt="SocialMedia" /></a>
                     </Link>
-                    <Link href="https://www.tiktok.com/@periodicohoybolivia" legacyBehavior scroll={false}>
-                        <a onClick={handlerClick} target="_blank"> <img src="/SocialMedia/android.svg" alt="SocialMedia" /></a>
+                    <Link href="https://firebasestorage.googleapis.com/v0/b/hoy-bo-8b964.appspot.com/o/Peri%C3%B3dico%20HOY.apk?alt=media&token=1f242f98-80da-4bc5-bc61-63f6b556f87f" legacyBehavior scroll={false}>
+                        <a onClick={handlerClick} > <img src="/SocialMedia/android.svg" alt="SocialMedia" /></a>
                     </Link>
                 </div>
 
