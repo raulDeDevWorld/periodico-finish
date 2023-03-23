@@ -119,8 +119,10 @@ function Layout({ children }) {
                             </div>
 
                         </div>
-
-                        <span> ©TARKAN Ltda.</span>
+                        <Link href="/Login" legacyBehavior scroll={false}>
+                                    <a onClick={handlerClick}> <span> ©TARKAN Ltda.</span></a>
+                        </Link>
+                       
                     </footer>
 
 
