@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { app } from './config'
 import { onAuthStateChanged, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getDatabase, ref, onValue, set, update, child, get, query, remove, limitToFirst, limitToLast, orderByValue, startAt, orderByChild, endAt, equalTo, endBefore } from "firebase/database";
+import { getDatabase, ref, onValue, set, update, child, get, query, remove,startAfter, limitToFirst, limitToLast, orderByValue, startAt, orderByChild, endAt, equalTo, endBefore } from "firebase/database";
 import { getList, getIndexStorage } from './storage'
 import { getDate, getDayMonthYear, getMonthAndYear } from '../utils/Utils'
 
@@ -86,12 +86,12 @@ async function getIndexData(setUserData, date, minDate) {
     });
 
   arr2.map((i) => {
-    get(query(ref(db, i)))
+    get(query(ref(db, i),  orderByChild('dateInit'), startAfter(date.toString())))
       .then((snapshot) => {
         if (snapshot.exists()) {
           let snap = snapshot.val()
-          // setUserData(allData)
           allData = { ...allData, [i]: snap }
+          setUserData(allData)
         }
       });
   });

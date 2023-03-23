@@ -19,9 +19,14 @@ export default function Form({ id, ruteDB, ruteSTG, title, i, carpeta, dataDB, d
 
     function handlerEventChange(e) {
         const name = e.target.name
-        const value = e.target.value
+        const format = e.target.value.split("-")
+
+        const value = new Date(parseInt(format[0]), parseInt(format[1] - 1), format[2], 0, 0, 59).toString()
         const object = { [name]: value }
         setData({ ...data, ...object })
+
+
+        console.log(value)
     }
 
     function handlerInputFile(e) {
