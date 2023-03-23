@@ -34,6 +34,8 @@ function TemplateFour({ color, topic, post1, post2, post3, post4, description1, 
     useEffect(() => {
         userDB[topic] && userDB[topic]["Posts"] && setDataForDate(Object.keys(userDB[topic]["Posts"]).map(i => { const newI = i.split('_'); return newI[1] }).sort((a, b) => b - a))
         userDB && userDB[topic] !== undefined && userDB[topic]["Posts"] !== undefined && getIndexStorage(topic, userDB[topic]["Posts"], postsIMG, setUserPostsIMG)
+        userDB && userDB[topic] !== undefined && userDB[topic]["BannerTop"] !== undefined && getIndexStorage('Banners', userDB[topic]["BannerTop"], postsIMG, setUserPostsIMG)
+        userDB && userDB[topic] !== undefined && userDB[topic]["BannerBottom"] !== undefined && getIndexStorage('Banners', userDB[topic]["BannerBottom"], postsIMG, setUserPostsIMG)
         userDB && userDB.users !== undefined && getIndexStorage ('users', userDB["users"], postsIMG, setUserPostsIMG)
     }, [userDB]);
     return (
