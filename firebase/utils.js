@@ -86,7 +86,7 @@ async function getIndexData(setUserData, date, minDate) {
     });
 
   arr2.map((i) => {
-    get(query(ref(db, i),  orderByChild('dateInit'), startAfter(date.toString())))
+    get(query(ref(db, i),  orderByChild('dateInit'), endBefore(date.toString())))
       .then((snapshot) => {
         if (snapshot.exists()) {
           let snap = snapshot.val()
